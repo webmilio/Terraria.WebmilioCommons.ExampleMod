@@ -1,0 +1,4 @@
+displayName = Webmilio's Commons - Example Mod
+author = Webmilio
+version = 0.1
+modReferences = WebCom
