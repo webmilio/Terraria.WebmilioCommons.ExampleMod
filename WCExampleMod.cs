@@ -1,4 +1,5 @@
 using System.IO;
+using System.Security.Cryptography;
 using Terraria.ModLoader;
 using WebCom.Networking;
 

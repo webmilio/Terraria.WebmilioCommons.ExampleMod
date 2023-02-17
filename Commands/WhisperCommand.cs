@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
+using System.Text;
 using Terraria;
 using Terraria.ModLoader;
 using WCExampleMod.Networking;
+using WCExampleMod.Systems;
 using WebCom;
 using WebCom.Networking;
 using WebCom.Tinq;
@@ -24,12 +26,16 @@ internal class WhisperCommand : ModCommand
 
         Main.NewText($"To {dst.name}: {msg}", Color.Gray);
 
+        var keys = ModContent.GetInstance<EMSystem>();
+        var msgBytes = Encoding.Unicode.GetBytes(msg);
+        var msgEncrypted = keys.Encrypt(msgBytes, Packet.ServerWhoAmI);
+
         Mod.PreparePacket(new WhisperPacket()
         {
             Player = caller.Player,
 
             DestinationId = dst.whoAmI,
-            Message = msg
+            Message = msgEncrypted
         })
             .Send(Packet.ServerWhoAmI);
     }
