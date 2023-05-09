@@ -46,12 +46,12 @@ public class EMPlayer : ModPlayer
 
     public override void SaveData(TagCompound tag)
     {
-        Saver.This.Save(this, tag);
+        Saver.This.Save(this, tag); // Save all fields/properties marked with [Save].
     }
 
     public override void LoadData(TagCompound tag)
     {
-        Saver.This.Load(this, tag);
+        Saver.This.Load(this, tag); // Load all fields/properties marked with [Save].
     }
 
     [Save] public int ExtraHealth { get; set; }
