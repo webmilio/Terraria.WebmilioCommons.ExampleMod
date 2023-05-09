@@ -1,20 +1,24 @@
-﻿using System.Security.Cryptography;
+﻿using Microsoft.Xna.Framework.Input;
+using System.Security.Cryptography;
 using Terraria;
 using Terraria.ModLoader;
 using WebCom;
 using WebCom.Extensions;
+using WebCom.Keybinds;
 
-namespace WCExampleMod.Systems;
+namespace WCExampleMod.Content.Systems;
 
 internal class EMSystem : ModSystem
 {
     private RSACryptoServiceProvider _selfKey;
-    
+
     private readonly RSACryptoServiceProvider[] _remoteRSAKeys = new RSACryptoServiceProvider[Main.player.Length + 1];
 
     public override void Load()
     {
         _selfKey = RSACSP;
+
+        Keybinder.Register(this); // Register all [Keybind]s in the class.
     }
 
     public override void Unload()
@@ -56,4 +60,7 @@ internal class EMSystem : ModSystem
 
     public byte[] PublicKey => _selfKey.ExportRSAPublicKey();
     private static RSACryptoServiceProvider RSACSP => new RSACryptoServiceProvider(8096);
+
+    [Keybind(nameof(ThrowProjectileUpwards), Keys.P)]
+    public ModKeybind ThrowProjectileUpwards { get; private set; }
 }

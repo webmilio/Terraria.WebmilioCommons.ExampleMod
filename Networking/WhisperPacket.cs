@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using Terraria;
 using Terraria.ModLoader;
-using WCExampleMod.Systems;
+using WCExampleMod.Content.Systems;
 using WebCom.Networking;
 
 namespace WCExampleMod.Networking;

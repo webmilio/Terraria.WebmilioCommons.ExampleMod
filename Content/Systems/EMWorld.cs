@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WCExampleMod.Systems
+namespace WCExampleMod.Content.Systems
 {
     internal class EMWorld
     {

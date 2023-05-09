@@ -1,6 +1,7 @@
+using Microsoft.Xna.Framework.Input;
 using System.IO;
-using System.Security.Cryptography;
 using Terraria.ModLoader;
+using WebCom.Keybinds;
 using WebCom.Networking;
 
 namespace WCExampleMod;

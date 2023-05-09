@@ -1,6 +1,4 @@
-﻿using WCExampleMod.Players;
-
-namespace WCExampleMod.Networking;
+﻿namespace WCExampleMod.Networking;
 
 /// <summary>
 /// This class inherits the ModPlayerNetworkPacket, useful for modifying and synchronizing ModPlayer related data.

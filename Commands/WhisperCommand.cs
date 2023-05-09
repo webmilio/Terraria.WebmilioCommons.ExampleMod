@@ -2,8 +2,8 @@
 using System.Text;
 using Terraria;
 using Terraria.ModLoader;
+using WCExampleMod.Content.Systems;
 using WCExampleMod.Networking;
-using WCExampleMod.Systems;
 using WebCom;
 using WebCom.Networking;
 using WebCom.Tinq;
